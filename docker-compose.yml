@@ -1,0 +1,27 @@
+version: '3'
+services:
+
+  app:
+    container_name: garden-backend
+    build: .
+    restart: always
+    volumes:
+      - ./app.py:/app/app.py
+      - ./src:/app/src
+    depends_on:
+      - postgres
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+
+  postgres:
+    container_name: garden-db
+    image: postgres:12.0
+    restart: always
+    volumes:
+      - ./db/init:/docker-entrypoint-initdb.d/
+    ports:
+      - "5432:5432"
+    env_file:
+      - ./db/.env
