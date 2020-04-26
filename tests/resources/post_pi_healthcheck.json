@@ -1,0 +1,5 @@
+{
+  "healthcheck_type": "battery",
+  "unit": "%",
+  "value": 76.4
+}
