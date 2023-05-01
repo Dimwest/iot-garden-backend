@@ -1,5 +1,5 @@
 werkzeug
-flask==1.1.2
+flask==2.3.2
 psycopg2
 jsonschema==3.2.0
 simplejson==3.17.0
